@@ -1,20 +1,26 @@
 package async.main.logic;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import com.practo.commons.queue.templates.BeanstalkQueueTemplate;
+import com.practo.commons.queue.QueueTemplate;
 
+@Component
 public class QueueHandler  {
-
-	@Autowired
-	private BeanstalkQueueTemplate template;
 	
-	public String sendJob() {
-		template = new BeanstalkQueueTemplate(0,1,300);
+	@Autowired
+	private QueueTemplate queueTemplate;
+	
+	public void sendJob() {
 		Job msg = new Job();
-	    msg.setMessage("red");
-	String queueName = template.createQueue("colorQueue");
-	String id = template.send(queueName,msg);
-	return id;
+		msg.setMessage("red");
+		Queue<String> colorQueue = new LinkedList<>();
+		colorQueue.add("msg.getMessage()");
+		queueTemplate.sendAsync("colorQueue", msg);
+		
 	}
+	
 }
