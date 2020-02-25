@@ -8,14 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class AsyncController {
 	
 	@Autowired
-	private QueueHandler queueHandler;
-	@Autowired
-	private WorkHandler workHandler;
+	private Selector selector;
+	
 	
 	@GetMapping("/example")
 	public String Hello() throws Exception {
-		queueHandler.sendJob();
-		workHandler.execute();
+		selector.selectQueue();
 		return "Successfull";
 	}
 }

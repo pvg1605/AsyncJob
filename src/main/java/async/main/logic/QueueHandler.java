@@ -1,8 +1,5 @@
 package async.main.logic;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,13 +11,11 @@ public class QueueHandler  {
 	@Autowired
 	private QueueTemplate queueTemplate;
 	
-	public void sendJob() {
+	public void sendJob(String queueName,String message) {
 		Job msg = new Job();
-		msg.setMessage("red");
-		Queue<String> colorQueue = new LinkedList<>();
-		colorQueue.add("msg.getMessage()");
-		queueTemplate.sendAsync("colorQueue", msg);
+		msg.setMessage(message);
+		queueTemplate.sendAsync(queueName, msg);
 		
 	}
-	
 }
+	

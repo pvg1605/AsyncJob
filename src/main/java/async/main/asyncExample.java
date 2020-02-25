@@ -8,7 +8,8 @@ public class asyncExample {
 
 	public static void main(String[] args) {
 		SpringApplication.run(asyncExample.class, args);
-
+		
+		
 	}
 
 }
