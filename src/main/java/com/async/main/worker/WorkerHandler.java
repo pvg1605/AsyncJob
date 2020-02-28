@@ -1,4 +1,4 @@
-package async.main.logic;
+package com.async.main.worker;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.Message;
 import org.springframework.stereotype.Component;
 
+import com.async.main.logic.Job;
 import com.practo.commons.queue.QueueTemplate;
 import com.practo.commons.worker.scheduler.SchedulingStrategy;
 

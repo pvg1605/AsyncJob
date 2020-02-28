@@ -1,8 +1,9 @@
-package async.main.logic;
+package com.async.main.queue;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.async.main.logic.Job;
 import com.practo.commons.queue.QueueTemplate;
 
 @Component

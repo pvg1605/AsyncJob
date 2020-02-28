@@ -1,7 +1,10 @@
-package async.main.logic;
+package com.async.main.logic;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import com.async.main.queue.AnimalQueue;
+import com.async.main.queue.ColorQueue;
 
 @Component
 public class Selector {

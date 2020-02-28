@@ -1,4 +1,4 @@
-package async.main.logic;
+package com.async.main.queue;
 
 import java.util.LinkedList;
 import java.util.Queue;

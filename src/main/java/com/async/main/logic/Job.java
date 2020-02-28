@@ -1,4 +1,4 @@
-package async.main.logic;
+package com.async.main.logic;
 
 import java.io.Serializable;
 
